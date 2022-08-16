@@ -23,12 +23,12 @@ function CartItem({ item, changeQuantity, deleteItem }) {
             deleteItem={deleteItem}
           />
         </div>
-        <a
+        <button
           onClick={(e) => deleteItem(e, item.id)}
           className="decoration-1 underline text-blue-500 text-xs self-end justify-self-end pb-1"
         >
           Remove
-        </a>
+        </button>
         <p className="col-span-2 text-[10px] text-left">*This is a one-time purchase and will ship shortly.</p>
       </div>
     </div>

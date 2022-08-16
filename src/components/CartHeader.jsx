@@ -1,10 +1,10 @@
-function CartHeader() {
+function CartHeader({ setCartDisplay }) {
   return (
     <header className="h-[60px] bg-[#233e5d] text-white ">
       <div className="pt-[22px] pl-4 flex justify-between align-text-bottom">
         <p className="text-[22px] font-bold">My Cart</p>
-        <button className="text-[11px] pr-4 flex items-center">
-          <span className=" pr-3 font-semibold">Close</span>
+        <button className="text-[11px] pr-4 flex items-center" onClick={()=>setCartDisplay(false)}>
+          <span className="block pr-3 font-semibold">Close</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

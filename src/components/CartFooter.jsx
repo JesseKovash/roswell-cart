@@ -3,18 +3,11 @@ function CartFooter({ cartDisplay, setCartDisplay }) {
   return (
     <div className="cart-footer flex-col bg-white pt-[10px]">
     <footer className="flex flex-col items-center">
-      <Link to="/checkout" className="block btn btn-primary w-full bg-[#2356b2]">
-        {" "}
+      <Link to="/checkout" className="block btn btn-primary w-full">
         Cart Checkout
       </Link>
-      <Link
-        to="/"
-        className="block btn btn-secondary"
-        setCartDisplay={setCartDisplay}
-        cartDisplay={cartDisplay}
-      >
-        Continue Shopping
-      </Link>
+      <button className="btn btn-secondary" onClick={()=>setCartDisplay(false)}>Continue Shopping</button>
+
     </footer>
   </div>
   )

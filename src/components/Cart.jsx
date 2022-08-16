@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Button from "../components/Button";
 import CartHeader from "../components/CartHeader";
 import CartContents from "../components/CartContents";
 import CartFooter from "../components/CartFooter";
@@ -53,7 +51,7 @@ function Cart({ cartDisplay, setCartDisplay }) {
 
   return (
     <div className={cartDisplay ? "cart-visible main-cart h-screen flex flex-col" : "main-cart h-screen flex flex-col"}>
-      <CartHeader />
+      <CartHeader setCartDisplay={setCartDisplay}/>
       <div className="flex flex-col justify-between flex-1 bg-black mx-[3px]">
         <CartContents
           contents={contents}

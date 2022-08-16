@@ -23,12 +23,11 @@ code {
   top: 0;
   right: 0;
   transform: translate(100%);
-  transition: 0.5s;
+  transition: all 0.3s;
 }
 
 .cart-visible {
   transform: translate(0);
-  transition: 0.3s;
 }
 
 .item-primary + .item-primary {
@@ -66,6 +65,7 @@ input {
 
 .btn-primary {
   color: white;
+  background-color: #2356b2;
   border-radius: 25px;
 }
 
