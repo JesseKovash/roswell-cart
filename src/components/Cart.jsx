@@ -37,8 +37,7 @@ function Cart({ cartDisplay, setCartDisplay }) {
     setContents(contentsCopy);
   }
 
-  function deleteItem(e, id) {
-    e.preventDefault();
+  function deleteItem(id) {
     const contentsCopy = { ...contents };
     for (let index = 0; index < contentsCopy.items.length; index++) {
       if (contentsCopy.items[index].id === id) {
@@ -50,8 +49,14 @@ function Cart({ cartDisplay, setCartDisplay }) {
   }
 
   return (
-    <div className={cartDisplay ? "cart-visible main-cart h-screen flex flex-col" : "main-cart h-screen flex flex-col"}>
-      <CartHeader setCartDisplay={setCartDisplay}/>
+    <div
+      className={
+        cartDisplay
+          ? "cart-visible main-cart h-screen flex flex-col"
+          : "main-cart h-screen flex flex-col"
+      }
+    >
+      <CartHeader setCartDisplay={setCartDisplay} />
       <div className="flex flex-col justify-between flex-1 bg-black mx-[3px]">
         <CartContents
           contents={contents}
