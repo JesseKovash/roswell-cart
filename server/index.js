@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3001;
+const path = require("path");
+app.use(express.static(path.resolve(__dirname, '../build')))
 app.use(function(req, res, next) {
   res.setHeader("Content-Security-Policy", "script-src 'self' https://fonts.googleapis.com");
   return next();
