@@ -25,6 +25,7 @@ code {
   right: 0;
   transform: translate(100%);
   transition: all 0.3s;
+  border: black 1px solid;
 }
 
 .cart-visible {
@@ -35,9 +36,9 @@ code {
   margin-top: 2.5rem;
 }
 
-.item-left {
+/* .item-left {
   max-width: 115px;
-}
+} */
 
 .item-right {
   max-width: 270px;

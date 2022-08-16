@@ -59,7 +59,7 @@ function Cart({ cartDisplay, setCartDisplay }) {
       }
     >
       <CartHeader setCartDisplay={setCartDisplay} />
-      <div className="flex flex-col justify-between flex-1 bg-black mx-[3px]">
+      <div className="flex flex-col justify-between flex-1 bg-black">
         <CartContents
           contents={contents}
           changeQuantity={changeQuantity}
