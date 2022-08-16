@@ -42,14 +42,16 @@ function Cart({ cartDisplay, setCartDisplay }) {
     for (let index = 0; index < contentsCopy.items.length; index++) {
       if (contentsCopy.items[index].id === id) {
         contentsCopy.items.splice(index, 1);
+        alert('Item Removed From Cart')
         break;
       }
     }
+    // if (contentsCopy.items.length === 0) setCartDisplay(false)
     setContents(contentsCopy);
   }
 
   return (
-    <div
+     <div
       className={
         cartDisplay
           ? "cart-visible main-cart h-screen flex flex-col"
@@ -65,7 +67,7 @@ function Cart({ cartDisplay, setCartDisplay }) {
         />
         <CartFooter cartDisplay={cartDisplay} setCartDisplay={setCartDisplay} />
       </div>
-    </div>
+    </div> : null
   );
 }
 
