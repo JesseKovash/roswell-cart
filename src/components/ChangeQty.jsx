@@ -5,7 +5,7 @@ function ChangeQty({ qty, changeQuantity, id, deleteItem }) {
       <div className="border h-[34px] w-[115px]">
         <div className="flex justify-between">
           <input type="number" value={qty} className="w-[65px]" onChange={(event)=>changeQuantity(event, id, null)}/>
-          <div className="qty-buttons flex flex-col justify-between">
+          <div className="qty-buttons flex flex-col justify-between  h-[32px]">
             <button onClick={(event) => changeQuantity(event, id, "increase")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

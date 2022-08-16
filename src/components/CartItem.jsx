@@ -2,7 +2,7 @@ import ChangeQty from "./ChangeQty";
 
 function CartItem({ item, changeQuantity, deleteItem }) {
   return (
-    <div className="item-primary grid grid-cols-[3fr_7fr] px-7">
+    <div className="item-primary grid grid-cols-[3fr_7fr] px-7 bg-white-500">
       <div className="item-left">
         <img
           src={item.featured_image.url}
@@ -11,7 +11,7 @@ function CartItem({ item, changeQuantity, deleteItem }) {
         ></img>
       </div>
       <div className="item-right grid grid-cols-[7fr_3fr] content-start gap-y-[16px]">
-        <p className="desc-qty text-left text-base font-bold">{item.title}</p>
+        <p className="desc-qty text-left text-base font-bold leading-5">{item.title}</p>
         <p className="text-base font-bold justify-self-end pt-1">
           {`$${(item.price / 100).toFixed(2)}`}
         </p>

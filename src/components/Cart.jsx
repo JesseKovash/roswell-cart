@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import CartHeader from "../components/CartHeader";
 import CartContents from "../components/CartContents";
+import CartFooter from "../components/CartFooter";
 
 function Cart({ cartDisplay, setCartDisplay }) {
   const [contents, setContents] = useState({});
@@ -41,7 +42,7 @@ function Cart({ cartDisplay, setCartDisplay }) {
   function deleteItem(e, id) {
     e.preventDefault();
     const contentsCopy = { ...contents };
-    for (const index = 0; index < contentsCopy.items.length; index++) {
+    for (let index = 0; index < contentsCopy.items.length; index++) {
       if (contentsCopy.items[index].id === id) {
         contentsCopy.items.splice(index, 1);
         break;
@@ -51,28 +52,15 @@ function Cart({ cartDisplay, setCartDisplay }) {
   }
 
   return (
-    <div className="main-cart">
+    <div className={cartDisplay ? "cart-visible main-cart h-screen flex flex-col" : "main-cart h-screen flex flex-col"}>
       <CartHeader />
-      <CartContents
-        contents={contents}
-        changeQuantity={changeQuantity}
-        deleteItem={deleteItem}
-      />
-      <div className="cart-footer flex-col">
-        <footer className="flex flex-col items-center">
-          <Link to="/checkout" className="block btn btn-primary w-full bg-[#2356b2]">
-            {" "}
-            Cart Checkout
-          </Link>
-          <Link
-            to="/"
-            className="block btn btn-secondary"
-            setCartDisplay={setCartDisplay}
-            cartDisplay={cartDisplay}
-          >
-            Continue Shopping
-          </Link>
-        </footer>
+      <div className="flex flex-col justify-between flex-1 bg-black mx-[3px]">
+        <CartContents
+          contents={contents}
+          changeQuantity={changeQuantity}
+          deleteItem={deleteItem}
+        />
+        <CartFooter cartDisplay={cartDisplay} setCartDisplay={setCartDisplay} />
       </div>
     </div>
   );
