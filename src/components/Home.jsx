@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from "react";
 import Cart from "../components/Cart.jsx";
 import Button from "../components/Button.jsx";

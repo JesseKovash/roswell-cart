@@ -1,4 +1,3 @@
-import React from 'react';
 import ChangeQty from "./ChangeQty";
 
 function CartItem({ item, changeQuantity, deleteItem }) {

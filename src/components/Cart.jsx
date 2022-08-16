@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
@@ -17,38 +16,48 @@ function Cart({ cartDisplay, setCartDisplay }) {
     fetchData();
   }, [cartDisplay]);
 
-  function changeQuantity(id, change) {
-    const contentsCopy = {...contents};
-    for(const item of contentsCopy.items) {
+  function changeQuantity(event, id, change) {
+    const inputQty = +event.target.value;
+    const contentsCopy = { ...contents };
+    for (const item of contentsCopy.items) {
       if (item.id === id) {
-        if (change === 'increase') {
+        if (change === "increase") {
           item.quantity++;
-        } else {
+        } else if (change === "decrease") {
           item.quantity--;
+        } else {
+          item.quantity = inputQty;
         }
         item.final_line_price = item.quantity * item.final_price;
         break;
       }
     }
-    setContents(contentsCopy)
-  };
+    contentsCopy.item_count = contentsCopy.items.reduce((total, oneItem) => {
+      return total + oneItem.quantity;
+    }, 0);
+    setContents(contentsCopy);
+  }
 
   function deleteItem(e, id) {
     e.preventDefault();
-    const contentsCopy = {...contents};
-    for(const index = 0; index < contentsCopy.items.length; index++) {
+    const contentsCopy = { ...contents };
+    for (const index = 0; index < contentsCopy.items.length; index++) {
       if (contentsCopy.items[index].id === id) {
-        contentsCopy.items.splice(index, 1)
+        contentsCopy.items.splice(index, 1);
         break;
       }
     }
-    setContents(contentsCopy)
-  };
+    setContents(contentsCopy);
+  }
 
   return (
     <div>
       <CartHeader />
-      <CartContents contents={contents} changeQuantity={changeQuantity} deleteItem={deleteItem}/>
+      <CartContents
+        contents={contents}
+        changeQuantity={changeQuantity}
+        deleteItem={deleteItem}
+      />
       <div className="cart-btns flex-col">
         <Link to="/checkout" className="block">
           <Button btnDesc="Cart Checkout" />

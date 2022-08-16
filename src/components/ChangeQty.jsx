@@ -1,13 +1,12 @@
-// import { CaretDown } from "phosphor-react";
-
 function ChangeQty({ qty, changeQuantity, id, deleteItem }) {
+
   return (
     <div className="flex items-end">
       <div className="border h-8 w-[115px]">
         <div className="flex justify-between">
-          <input type="number" value={qty} className="w-[65px]"/>
+          <input type="number" value={qty} className="w-[65px]" onChange={(event)=>changeQuantity(event, id, null)}/>
           <div className="qty-buttons flex flex-col justify-between">
-            <button onClick={() => changeQuantity(id, "increase")}>
+            <button onClick={(event) => changeQuantity(event, id, "increase")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -26,7 +25,7 @@ function ChangeQty({ qty, changeQuantity, id, deleteItem }) {
                 ></polyline>
               </svg>
             </button>
-            <button onClick={() => changeQuantity(id, "decrease")}>
+            <button onClick={(event) => changeQuantity(event, id, "decrease")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -44,7 +43,6 @@ function ChangeQty({ qty, changeQuantity, id, deleteItem }) {
                   stroke-width="16"
                 ></polyline>
               </svg>
-              {/* <CaretDown size={16} color="#fcfcfc" /> */}
             </button>
           </div>
         </div>
