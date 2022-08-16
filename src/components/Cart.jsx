@@ -8,7 +8,7 @@ function Cart({ cartDisplay, setCartDisplay }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3001/cart");
+      const response = await fetch("/cart");
       const data = await response.json();
       setContents(data);
     };
