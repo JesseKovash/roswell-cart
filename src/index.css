@@ -17,7 +17,23 @@ code {
     monospace;
 }
 
-.desc-container {
+.main-cart {
+  max-width: 385px;
+}
+
+.item-primary + .item-primary {
+  margin-top: 2.5rem;
+}
+
+.item-left {
+  max-width: 115px;
+}
+
+.item-right {
+  max-width: 270px;
+}
+
+.desc-qty {
   min-width: 130px;
 }
 
@@ -25,3 +41,27 @@ code {
   min-height: 30px;
   padding: 3px 7px;
 }
+
+input {
+  text-indent: 16px;
+}
+
+.btn {
+  padding: 12px 0;
+  max-width: 330px;
+}
+
+.btn-primary {
+  color: white;
+  border-radius: 25px;
+}
+
+.btn-secondary {
+  color: black;
+}
+
+
+
+
+
+

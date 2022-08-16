@@ -2,7 +2,7 @@ function ChangeQty({ qty, changeQuantity, id, deleteItem }) {
 
   return (
     <div className="flex items-end">
-      <div className="border h-8 w-[115px]">
+      <div className="border h-[34px] w-[115px]">
         <div className="flex justify-between">
           <input type="number" value={qty} className="w-[65px]" onChange={(event)=>changeQuantity(event, id, null)}/>
           <div className="qty-buttons flex flex-col justify-between">

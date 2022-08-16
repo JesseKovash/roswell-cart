@@ -51,24 +51,28 @@ function Cart({ cartDisplay, setCartDisplay }) {
   }
 
   return (
-    <div>
+    <div className="main-cart">
       <CartHeader />
       <CartContents
         contents={contents}
         changeQuantity={changeQuantity}
         deleteItem={deleteItem}
       />
-      <div className="cart-btns flex-col">
-        <Link to="/checkout" className="block">
-          <Button btnDesc="Cart Checkout" />
-        </Link>
-        <Link to="/" className="block">
-          <Button
-            btnDesc="Continue Shopping"
+      <div className="cart-footer flex-col">
+        <footer className="flex flex-col items-center">
+          <Link to="/checkout" className="block btn btn-primary w-full bg-[#2356b2]">
+            {" "}
+            Cart Checkout
+          </Link>
+          <Link
+            to="/"
+            className="block btn btn-secondary"
             setCartDisplay={setCartDisplay}
             cartDisplay={cartDisplay}
-          />
-        </Link>
+          >
+            Continue Shopping
+          </Link>
+        </footer>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import CartItem from "./CartItem";
 
 function CartContents({ contents, changeQuantity, deleteItem }) {
   return (
-    <>
+    <div className="py-10">
       {contents.hasOwnProperty('items') ? (
         <>
           {contents?.items.map((oneItem) => (
@@ -10,7 +10,7 @@ function CartContents({ contents, changeQuantity, deleteItem }) {
           ))}
         </>
       ) : null}
-    </>
+    </div>
   );
 }
 
