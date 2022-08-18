@@ -16,14 +16,14 @@ function CartItem({ item, changeQuantity, deleteItem }) {
         <p className="text-sm font-bold justify-self-end pt-1">
           {`$${(item.price / 100).toFixed(2)}`}
         </p>
-        <div>
+        <>
           <ChangeQty
             qty={item.quantity}
             id={item.id}
             changeQuantity={changeQuantity}
             deleteItem={deleteItem}
           />
-        </div>
+        </>
         <button
           onClick={() => deleteItem(item.id)}
           className="decoration-1 underline text-blue-500 text-xs self-end justify-self-end pb-1"
