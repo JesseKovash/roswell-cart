@@ -9,6 +9,7 @@ function Cart({ cartDisplay, setCartDisplay }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("/cart");
+      // const response = await fetch("http://localhost:3001/cart");
       const data = await response.json();
       setContents(data);
     };
@@ -46,7 +47,6 @@ function Cart({ cartDisplay, setCartDisplay }) {
         break;
       }
     }
-    // if (contentsCopy.items.length === 0) setCartDisplay(false)
     setContents(contentsCopy);
   }
 

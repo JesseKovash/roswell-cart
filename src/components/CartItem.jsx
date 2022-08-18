@@ -7,7 +7,6 @@ function CartItem({ item, changeQuantity, deleteItem }) {
         <img
           src={item.featured_image.url}
           alt={item.product_title}
-          className="object-fit"
         ></img>
       </div>
       <div className="item-right grid grid-cols-[7fr_3fr] content-start gap-y-[16px]">
@@ -17,7 +16,7 @@ function CartItem({ item, changeQuantity, deleteItem }) {
         <p className="text-sm font-bold justify-self-end pt-1">
           {`$${(item.price / 100).toFixed(2)}`}
         </p>
-        <div className="flex">
+        <div>
           <ChangeQty
             qty={item.quantity}
             id={item.id}
